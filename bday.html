@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From your baby: Zixus</title> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #F5DEB3;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #FF6347;
+      font-size: 3em;
+      margin-top: 20%;
+    }
+    p {
+      color: #003566;
+      font-size: 1.5em;
+    }
+    .button {
+      background-color: #00b4d8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0077b6;
+    }
+    .image-container {
+      margin-top: 10px;
+    }
+    img {
+      width: 250px;
+      height: 250px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    /* Initially hide the gallery */
+  .gallery-container {
+      display: none; /* Gallery is hidden by default */
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* 3 images in a row */
+      gap: 10px;
+    }
+    .gallery-container img {
+      width: 100%; /* Make images fit within grid */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday!!🫶🥳</h1>
+  <p>Wishing you a fantastic day filled with love and joy!</p>
+  <button class="button" onclick="playSound()">Click for Surprise</button>
+
+  <!-- Image below the button (bdaycat image) -->
+  <div class="image-container">
+    <img src="bdaycat.jpeg" alt="Birthday image"> <!-- Replace with your image file -->
+  </div>
+
+  <!-- Button to show image gallery -->
+<button class="button" onclick="showGallery()">Click to see more cats!</button>
+
+  <!-- Image Gallery -->
+  <div class="gallery-container" id="gallery" style="display:none;">
+    <img src="cat1.jpg" alt="Image 1">
+    <img src="cat2.jpg" alt="Image 2">
+    <img src="cat3.jpg" alt="Image 3">
+    <img src="cat4.jpg" alt="Image 4">
+    <img src="cat5.jpg" alt="Image 5">
+  </div>
+
+  <audio id="birthdaySound" src="The Birthday Song.mp3"></audio>
+
+  <script>
+    function playSound() {
+      const sound = document.getElementById("birthdaySound");
+      sound.play();  // Start the sound
+
+      // Delay the alert to avoid interruption of the sound
+      setTimeout(function() {
+        alert("Roses are Red\nSky is Blue\nI just want to say,\nHAPPY BIRTHDAY MY ANY!!🎉😚");
+      }, 2000);  // Alert after 2 seconds (adjust as needed)
+    }
+
+    function showGallery() {
+      const gallery = document.getElementById("gallery");
+      // Toggle the gallery visibility
+      if (gallery.style.display === "none") {
+        gallery.style.display = "grid";  // Show the gallery
+      } else {
+        gallery.style.display = "none";  // Hide the gallery
+      }
+    }
+  </script>
+</body>
+</html>
